@@ -1,515 +1,654 @@
 <!DOCTYPE html>
-<!-- saved from url=(0127)file:///Users/kritchayaissakul/Downloads/%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD_282221_2.html -->
-<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>เช็คชื่อ 282221</title>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>เช็คชื่อ · 282221</title>
 <style>
-  :root {
-    --primary: #1a56db;
-    --primary-dark: #1e40af;
-    --success: #16a34a;
-    --danger: #dc2626;
-    --warning: #d97706;
-    --surface: #f8fafc;
-    --card: #ffffff;
-    --border: #e2e8f0;
-    --text: #1e293b;
-    --muted: #64748b;
-    --sec111: #fef9c3;
-    --present-bg: #dcfce7;
-    --present-text: #15803d;
-    --absent-bg: #fee2e2;
-    --absent-text: #b91c1c;
-    --late-bg: #fef3c7;
-    --late-text: #b45309;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Sarabun', 'Segoe UI', sans-serif;
-    background: var(--surface);
-    color: var(--text);
-    min-height: 100vh;
-  }
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
 
-  /* ── SCREENS ── */
-  .screen { display: none; min-height: 100vh; }
-  .screen.active { display: flex; flex-direction: column; }
+:root {
+  --ink:      #0f1923;
+  --ink-2:    #3d5166;
+  --ink-3:    #8fa3b8;
+  --paper:    #f4f7fa;
+  --white:    #ffffff;
+  --accent:   #0057ff;
+  --accent-2: #e8efff;
+  --present:  #00b96b;
+  --present-bg:#e6f9f1;
+  --absent:   #f03e3e;
+  --absent-bg:#ffeaea;
+  --late:     #f59f00;
+  --late-bg:  #fff4cc;
+  --sec111:   #7950f2;
+  --sec111-bg:#f3f0ff;
+  --border:   #dde4ed;
+  --shadow:   0 2px 12px rgba(15,25,35,.08);
+  --shadow-lg:0 8px 32px rgba(15,25,35,.14);
+  --r:        14px;
+  --r-sm:     8px;
+}
 
-  /* ── HEADER ── */
-  .app-header {
-    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
-    color: #fff;
-    padding: 16px 20px 20px;
-    position: sticky; top: 0; z-index: 10;
-    box-shadow: 0 2px 8px rgba(0,0,0,.2);
-  }
-  .app-header h1 { font-size: 18px; font-weight: 700; }
-  .app-header p  { font-size: 13px; opacity: .85; margin-top: 2px; }
-  .back-btn {
-    background: rgba(255,255,255,.2);
-    border: none; color: #fff;
-    padding: 6px 14px; border-radius: 20px;
-    font-size: 13px; cursor: pointer;
-    margin-bottom: 10px; display: inline-flex; align-items: center; gap: 5px;
-  }
-  .back-btn:active { background: rgba(255,255,255,.35); }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* ── TEACHER SELECT SCREEN ── */
-  #screen-teachers { background: var(--surface); }
-  .hero {
-    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
-    padding: 32px 20px 40px;
-    color: #fff; text-align: center;
-  }
-  .hero .icon { font-size: 48px; margin-bottom: 10px; }
-  .hero h2 { font-size: 22px; font-weight: 700; }
-  .hero p  { font-size: 14px; opacity: .8; margin-top: 6px; }
-  .section-label {
-    font-size: 12px; font-weight: 600; color: var(--muted);
-    text-transform: uppercase; letter-spacing: .5px;
-    padding: 18px 20px 8px;
-  }
-  .teacher-list { padding: 0 16px 32px; display: flex; flex-direction: column; gap: 10px; }
-  .teacher-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 16px 18px;
-    display: flex; align-items: center; gap: 14px;
-    cursor: pointer;
-    transition: transform .1s, box-shadow .1s;
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
-  }
-  .teacher-card:active { transform: scale(.98); box-shadow: none; }
-  .teacher-avatar {
-    width: 46px; height: 46px; border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; flex-shrink: 0;
-  }
-  .teacher-info { flex: 1; }
-  .teacher-name { font-size: 15px; font-weight: 600; }
-  .teacher-sub  { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .teacher-arrow { color: #94a3b8; font-size: 18px; }
+body {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100dvh;
+  -webkit-tap-highlight-color: transparent;
+}
 
-  /* ── SESSION SELECT ── */
-  #screen-session { background: var(--surface); }
-  .session-body { padding: 24px 16px; flex: 1; }
-  .session-cards { display: flex; gap: 14px; }
-  .session-card {
-    flex: 1;
-    background: var(--card);
-    border: 2px solid var(--border);
-    border-radius: 16px;
-    padding: 22px 16px;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color .15s, background .15s;
-  }
-  .session-card:active { background: #eff6ff; border-color: var(--primary); }
-  .session-card .s-num  { font-size: 36px; font-weight: 800; color: var(--primary); }
-  .session-card .s-label{ font-size: 13px; color: var(--muted); margin-top: 4px; }
-  .date-row { margin-top: 22px; }
-  .date-row label { font-size: 14px; font-weight: 600; display: block; margin-bottom: 8px; }
-  .date-input {
-    width: 100%; padding: 12px 14px;
-    border: 1px solid var(--border); border-radius: 10px;
-    font-size: 15px; font-family: inherit;
-    background: var(--card); color: var(--text);
-  }
-  .date-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,86,219,.15); }
+/* ══════════════════════════════
+   SCREENS
+══════════════════════════════ */
+.screen { display: none; min-height: 100dvh; flex-direction: column; }
+.screen.active { display: flex; }
 
-  /* ── ATTENDANCE SCREEN ── */
-  #screen-attendance { background: var(--surface); }
-  .att-stats {
-    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
-    padding: 14px 20px 18px;
-    display: flex; gap: 20px; justify-content: center;
-  }
-  .stat-item { text-align: center; color: #fff; }
-  .stat-num  { font-size: 26px; font-weight: 800; }
-  .stat-label{ font-size: 11px; opacity: .8; }
-  .filter-bar {
-    background: var(--card);
-    padding: 10px 16px;
-    display: flex; gap: 8px;
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-  }
-  .filter-bar::-webkit-scrollbar { display: none; }
-  .filter-btn {
-    padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
-    font-size: 13px; font-family: inherit; cursor: pointer;
-    background: var(--surface); color: var(--text); white-space: nowrap;
-    transition: background .1s;
-  }
-  .filter-btn.on { background: var(--primary); color: #fff; border-color: var(--primary); }
-  .search-bar {
-    padding: 10px 16px;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-  }
-  .search-input {
-    width: 100%; padding: 10px 14px;
-    border: 1px solid var(--border); border-radius: 10px;
-    font-size: 14px; font-family: inherit; background: var(--surface);
-  }
-  .search-input:focus { outline: none; border-color: var(--primary); }
-  .student-list { flex: 1; overflow-y: auto; padding: 10px 12px 100px; }
-  .student-row {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 8px;
-    padding: 12px 14px;
-    display: flex; align-items: center; gap: 12px;
-    transition: box-shadow .1s;
-  }
-  .student-row.sec111 { background: var(--sec111); border-color: #fde68a; }
-  .student-num  { font-size: 12px; color: var(--muted); width: 22px; text-align: center; flex-shrink: 0; }
-  .student-info { flex: 1; min-width: 0; }
-  .student-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .student-id   { font-size: 12px; color: var(--muted); margin-top: 1px; }
-  .sec-badge {
-    font-size: 10px; font-weight: 700; padding: 2px 6px;
-    border-radius: 8px; background: #dbeafe; color: #1d4ed8; margin-left: 6px;
-  }
-  .att-btns { display: flex; gap: 6px; flex-shrink: 0; }
-  .att-btn {
-    width: 40px; height: 40px; border-radius: 10px; border: 1.5px solid var(--border);
-    font-size: 15px; cursor: pointer; background: var(--surface);
-    display: flex; align-items: center; justify-content: center;
-    transition: all .1s; font-weight: 700;
-  }
-  .att-btn:active { transform: scale(.9); }
-  .att-btn.present { background: var(--present-bg); border-color: #86efac; color: var(--present-text); }
-  .att-btn.absent  { background: var(--absent-bg);  border-color: #fca5a5; color: var(--absent-text); }
-  .att-btn.late    { background: var(--late-bg);    border-color: #fcd34d; color: var(--late-text); }
+/* ══════════════════════════════
+   NAV BAR
+══════════════════════════════ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 16px;
+  height: 56px;
+  display: flex; align-items: center; gap: 12px;
+}
+.nav-back {
+  width: 36px; height: 36px;
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--ink-2); flex-shrink: 0;
+  transition: background .15s;
+}
+.nav-back:active { background: var(--border); }
+.nav-title { font-size: 15px; font-weight: 600; flex: 1; }
+.nav-sub   { font-size: 12px; color: var(--ink-3); }
+.nav-action {
+  padding: 7px 14px; border-radius: 20px;
+  background: var(--accent); color: #fff;
+  border: none; font-family: inherit; font-size: 13px;
+  font-weight: 600; cursor: pointer; flex-shrink: 0;
+  transition: opacity .15s;
+}
+.nav-action:active { opacity: .8; }
+.nav-action.ghost {
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--border);
+}
 
-  /* ── BOTTOM ACTION ── */
-  .bottom-bar {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--card);
-    border-top: 1px solid var(--border);
-    padding: 12px 16px;
-    display: flex; gap: 10px;
-    box-shadow: 0 -4px 12px rgba(0,0,0,.08);
-  }
-  .btn-primary {
-    flex: 1; padding: 14px;
-    background: var(--primary); color: #fff;
-    border: none; border-radius: 12px;
-    font-size: 15px; font-weight: 700; font-family: inherit;
-    cursor: pointer;
-  }
-  .btn-primary:active { background: var(--primary-dark); }
-  .btn-secondary {
-    padding: 14px 18px;
-    background: var(--surface); color: var(--text);
-    border: 1px solid var(--border); border-radius: 12px;
-    font-size: 14px; font-family: inherit; cursor: pointer;
-  }
+/* ══════════════════════════════
+   SCREEN 1 · HOME
+══════════════════════════════ */
+#s-home { background: var(--white); }
 
-  /* ── SUMMARY SCREEN ── */
-  #screen-summary { background: var(--surface); }
-  .summary-hero {
-    background: linear-gradient(135deg, #16a34a, #15803d);
-    color: #fff; padding: 28px 20px; text-align: center;
-  }
-  .summary-hero .big-icon { font-size: 52px; margin-bottom: 8px; }
-  .summary-hero h2 { font-size: 20px; font-weight: 700; }
-  .summary-hero p  { font-size: 14px; opacity: .85; margin-top: 4px; }
-  .summary-cards { padding: 16px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-  .sum-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 16px 10px; text-align: center;
-  }
-  .sum-num   { font-size: 28px; font-weight: 800; }
-  .sum-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .sum-card.present .sum-num { color: var(--success); }
-  .sum-card.absent  .sum-num { color: var(--danger); }
-  .sum-card.late    .sum-num { color: var(--warning); }
-  .sum-list { padding: 0 16px 120px; }
-  .sum-item {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 11px 14px;
-    display: flex; align-items: center; gap: 10px;
-    margin-bottom: 7px;
-  }
-  .sum-item.sec111 { background: var(--sec111); }
-  .status-dot {
-    width: 32px; height: 32px; border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; font-weight: 700; flex-shrink: 0;
-  }
-  .status-dot.present { background: var(--present-bg); color: var(--present-text); }
-  .status-dot.absent  { background: var(--absent-bg);  color: var(--absent-text); }
-  .status-dot.late    { background: var(--late-bg);    color: var(--late-text); }
-  .status-dot.none    { background: #f1f5f9; color: #94a3b8; }
-  .sum-name { font-size: 14px; font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .sum-id   { font-size: 12px; color: var(--muted); }
-  .export-btn {
-    width: 100%; padding: 14px;
-    background: #fff; color: var(--primary);
-    border: 2px solid var(--primary); border-radius: 12px;
-    font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;
-  }
+.home-hero {
+  background: var(--ink);
+  padding: 40px 24px 32px;
+  position: relative; overflow: hidden;
+}
+.home-hero::before {
+  content: '';
+  position: absolute; top: -60px; right: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: var(--accent); opacity: .12;
+}
+.home-hero::after {
+  content: '';
+  position: absolute; bottom: -80px; left: -60px;
+  width: 240px; height: 240px; border-radius: 50%;
+  background: var(--accent); opacity: .07;
+}
+.course-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.12); color: rgba(255,255,255,.8);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 12px; font-weight: 500;
+  margin-bottom: 16px; position: relative; z-index: 1;
+}
+.home-hero h1 {
+  font-size: 26px; font-weight: 700; color: #fff;
+  line-height: 1.25; position: relative; z-index: 1;
+  margin-bottom: 8px;
+}
+.home-hero p {
+  font-size: 14px; color: rgba(255,255,255,.6);
+  position: relative; z-index: 1;
+}
+.hero-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; padding: 20px 16px 8px;
+}
+.hero-stat {
+  background: var(--paper); border-radius: var(--r);
+  padding: 16px; border: 1px solid var(--border);
+}
+.hero-stat .num { font-size: 28px; font-weight: 700; color: var(--accent); font-family: 'IBM Plex Mono', monospace; }
+.hero-stat .lbl { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
 
-  /* ── MODAL ── */
-  .modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,.5); z-index: 100;
-    align-items: flex-end; justify-content: center;
-  }
-  .modal-overlay.open { display: flex; }
-  .modal {
-    background: var(--card); width: 100%; max-width: 480px;
-    border-radius: 20px 20px 0 0; padding: 20px;
-  }
-  .modal h3 { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
-  .modal-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
-  .modal-btn {
-    padding: 14px; border-radius: 12px; border: none;
-    font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer;
-  }
-  .modal-btn.copy   { background: #eff6ff; color: var(--primary); }
-  .modal-btn.csv    { background: #f0fdf4; color: var(--success); }
-  .modal-btn.cancel { background: var(--surface); color: var(--muted); }
+.section-head {
+  padding: 20px 16px 10px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.section-head h2 { font-size: 13px; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .5px; }
 
-  .toast {
-    position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%);
-    background: #1e293b; color: #fff;
-    padding: 10px 20px; border-radius: 20px;
-    font-size: 14px; z-index: 200; opacity: 0;
-    transition: opacity .3s; pointer-events: none;
-  }
-  .toast.show { opacity: 1; }
+.teacher-grid { padding: 0 12px 32px; display: flex; flex-direction: column; gap: 8px; }
 
-  @media (min-width: 480px) {
-    .screen { max-width: 480px; margin: 0 auto; }
-    .bottom-bar { max-width: 480px; left: 50%; transform: translateX(-50%); }
-  }
+.t-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 14px 16px;
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer; transition: transform .12s, box-shadow .12s;
+  box-shadow: var(--shadow);
+}
+.t-card:active { transform: scale(.985); box-shadow: none; }
+.t-avatar {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px;
+}
+.t-info { flex: 1; min-width: 0; }
+.t-name { font-size: 14px; font-weight: 600; }
+.t-meta { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+.t-arrow { color: var(--ink-3); font-size: 16px; }
+.t-sessions {
+  display: flex; gap: 5px;
+}
+.t-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border);
+}
+.t-dot.done { background: var(--present); }
+
+/* ══════════════════════════════
+   SCREEN 2 · SESSION
+══════════════════════════════ */
+#s-session { background: var(--paper); }
+.session-body { flex: 1; padding: 20px 16px; display: flex; flex-direction: column; gap: 16px; }
+
+.sess-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sess-card {
+  background: var(--white); border: 2px solid var(--border);
+  border-radius: var(--r); padding: 24px 16px;
+  text-align: center; cursor: pointer;
+  transition: border-color .15s, background .15s, transform .12s;
+  position: relative; overflow: hidden;
+}
+.sess-card:active { transform: scale(.97); }
+.sess-card.selected { border-color: var(--accent); background: var(--accent-2); }
+.sess-card .n { font-size: 40px; font-weight: 700; color: var(--accent); font-family: 'IBM Plex Mono', monospace; }
+.sess-card .l { font-size: 13px; color: var(--ink-3); margin-top: 4px; font-weight: 500; }
+.sess-card .done-badge {
+  position: absolute; top: 8px; right: 8px;
+  background: var(--present); color: #fff;
+  border-radius: 10px; font-size: 10px; font-weight: 600;
+  padding: 2px 7px;
+}
+
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+.field-label { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.field-input {
+  width: 100%; padding: 12px 14px;
+  border: 1px solid var(--border); border-radius: var(--r-sm);
+  font-size: 15px; font-family: inherit; background: var(--white);
+  color: var(--ink); transition: border-color .15s, box-shadow .15s;
+}
+.field-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,87,255,.1); }
+
+.info-box {
+  background: var(--accent-2); border: 1px solid rgba(0,87,255,.15);
+  border-radius: var(--r-sm); padding: 12px 14px;
+  font-size: 13px; color: var(--accent); line-height: 1.5;
+}
+.btn-primary {
+  width: 100%; padding: 15px;
+  background: var(--accent); color: #fff;
+  border: none; border-radius: var(--r); font-family: inherit;
+  font-size: 16px; font-weight: 700; cursor: pointer;
+  transition: opacity .15s; margin-top: auto;
+}
+.btn-primary:active { opacity: .85; }
+.btn-primary:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ══════════════════════════════
+   SCREEN 3 · ATTENDANCE
+══════════════════════════════ */
+#s-att { background: var(--paper); }
+
+.progress-bar {
+  height: 3px; background: var(--border);
+  position: sticky; top: 56px; z-index: 40;
+}
+.progress-fill {
+  height: 100%; background: var(--accent);
+  transition: width .3s ease;
+}
+
+.att-scoreboard {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 8px; padding: 14px 12px 10px; background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.score-box {
+  border-radius: var(--r-sm); padding: 10px 6px;
+  text-align: center;
+}
+.score-box.p { background: var(--present-bg); }
+.score-box.a { background: var(--absent-bg); }
+.score-box.l { background: var(--late-bg); }
+.score-box.n { background: var(--paper); }
+.score-num { font-size: 22px; font-weight: 700; font-family: 'IBM Plex Mono', monospace; }
+.score-box.p .score-num { color: var(--present); }
+.score-box.a .score-num { color: var(--absent); }
+.score-box.l .score-num { color: var(--late); }
+.score-box.n .score-num { color: var(--ink-3); }
+.score-lbl { font-size: 10px; color: var(--ink-3); margin-top: 2px; font-weight: 500; }
+
+.chip-row {
+  display: flex; gap: 6px; padding: 10px 12px;
+  overflow-x: auto; background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.chip-row::-webkit-scrollbar { display: none; }
+.chip {
+  padding: 5px 12px; border-radius: 20px;
+  border: 1px solid var(--border); background: var(--paper);
+  font-size: 12px; font-weight: 500; color: var(--ink-2);
+  cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  font-family: inherit; transition: all .12s;
+}
+.chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.search-wrap { padding: 10px 12px; background: var(--white); border-bottom: 1px solid var(--border); }
+.search-field {
+  width: 100%; padding: 10px 14px 10px 36px;
+  border: 1px solid var(--border); border-radius: 20px;
+  font-size: 14px; font-family: inherit; background: var(--paper);
+  position: relative;
+}
+.search-field:focus { outline: none; border-color: var(--accent); background: var(--white); }
+.search-wrap { position: relative; }
+.search-icon {
+  position: absolute; left: 24px; top: 50%;
+  transform: translateY(-50%); font-size: 15px; pointer-events: none;
+}
+
+.s-list { flex: 1; overflow-y: auto; padding: 10px 12px 110px; }
+
+.s-row {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 12px 14px;
+  display: flex; align-items: center; gap: 11px;
+  margin-bottom: 7px; transition: box-shadow .12s;
+  position: relative;
+}
+.s-row.sec111 { background: var(--sec111-bg); border-color: #d3c5fc; }
+.s-row.marked-present { border-left: 3px solid var(--present); }
+.s-row.marked-absent  { border-left: 3px solid var(--absent); }
+.s-row.marked-late    { border-left: 3px solid var(--late); }
+
+.s-seq { font-size: 11px; color: var(--ink-3); width: 20px; text-align: center; flex-shrink: 0; font-family: 'IBM Plex Mono', monospace; }
+.s-info { flex: 1; min-width: 0; }
+.s-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.s-id   { font-size: 11px; color: var(--ink-3); margin-top: 1px; font-family: 'IBM Plex Mono', monospace; }
+.sec-tag {
+  font-size: 9px; font-weight: 700;
+  padding: 1px 5px; border-radius: 4px; margin-left: 5px;
+  vertical-align: middle;
+  background: var(--accent-2); color: var(--accent);
+}
+.sec-tag.s111 { background: var(--sec111-bg); color: var(--sec111); }
+
+.att-trio { display: flex; gap: 5px; flex-shrink: 0; }
+.trio-btn {
+  width: 38px; height: 38px; border-radius: 10px;
+  border: 1.5px solid var(--border); background: var(--paper);
+  font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .1s; font-family: inherit;
+}
+.trio-btn:active { transform: scale(.88); }
+.trio-btn.p { background: var(--present-bg); border-color: #86efb4; }
+.trio-btn.l { background: var(--late-bg);    border-color: #fcd34d; }
+.trio-btn.a { background: var(--absent-bg);  border-color: #fca5a5; }
+
+.bottom-dock {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(255,255,255,.92); backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  padding: 12px 16px 16px;
+  display: flex; gap: 8px;
+  box-shadow: 0 -4px 20px rgba(15,25,35,.08);
+}
+.dock-ghost {
+  padding: 13px 16px; border-radius: var(--r);
+  background: var(--paper); border: 1px solid var(--border);
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  color: var(--ink-2); cursor: pointer; white-space: nowrap;
+}
+.dock-ghost:active { background: var(--border); }
+.dock-main {
+  flex: 1; padding: 13px;
+  background: var(--accent); color: #fff;
+  border: none; border-radius: var(--r);
+  font-family: inherit; font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: opacity .15s;
+}
+.dock-main:active { opacity: .85; }
+
+/* ══════════════════════════════
+   SCREEN 4 · SUMMARY (per session)
+══════════════════════════════ */
+#s-sum { background: var(--paper); }
+
+.sum-hero {
+  background: var(--ink); padding: 24px 20px 28px;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
+}
+.sum-kpi { text-align: center; }
+.sum-kpi .kn {
+  font-size: 36px; font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace; color: #fff;
+}
+.sum-kpi .kl { font-size: 11px; color: rgba(255,255,255,.5); margin-top: 2px; }
+.sum-kpi.pk .kn { color: var(--present); }
+.sum-kpi.ak .kn { color: var(--absent); }
+.sum-kpi.lk .kn { color: var(--late); }
+
+.sum-list { padding: 12px 12px 120px; }
+.sum-row {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: 11px 14px;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 6px;
+}
+.sum-row.sec111 { background: var(--sec111-bg); border-color: #d3c5fc; }
+.status-pill {
+  width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700;
+}
+.status-pill.p { background: var(--present-bg); color: var(--present); }
+.status-pill.a { background: var(--absent-bg);  color: var(--absent); }
+.status-pill.l { background: var(--late-bg);    color: var(--late); }
+.status-pill.x { background: var(--paper); color: var(--ink-3); }
+.sum-sname { font-size: 13px; font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sum-sid   { font-size: 11px; color: var(--ink-3); font-family: 'IBM Plex Mono', monospace; }
+
+/* ══════════════════════════════
+   SCREEN 5 · MASTER REPORT
+══════════════════════════════ */
+#s-report { background: var(--paper); }
+
+.report-hero {
+  background: var(--ink); padding: 24px 20px;
+  color: #fff;
+}
+.report-hero h2 { font-size: 20px; font-weight: 700; }
+.report-hero p  { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 4px; }
+
+.report-grid { padding: 12px 12px 110px; display: flex; flex-direction: column; gap: 7px; }
+.r-row {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.r-row.sec111 { background: var(--sec111-bg); border-color: #d3c5fc; }
+.r-avatar {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--paper); display: flex; align-items: center;
+  justify-content: center; font-size: 16px; flex-shrink: 0;
+}
+.r-info { flex: 1; min-width: 0; }
+.r-name { font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.r-id   { font-size: 11px; color: var(--ink-3); font-family: 'IBM Plex Mono', monospace; }
+.r-pills { display: flex; gap: 5px; flex-shrink: 0; }
+.rpill {
+  padding: 4px 8px; border-radius: 6px;
+  font-size: 11px; font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  min-width: 28px; text-align: center;
+}
+.rpill.p { background: var(--present-bg); color: var(--present); }
+.rpill.a { background: var(--absent-bg);  color: var(--absent); }
+.rpill.l { background: var(--late-bg);    color: var(--late); }
+
+/* ══════════════════════════════
+   MODAL
+══════════════════════════════ */
+.modal-bg {
+  display: none; position: fixed; inset: 0;
+  background: rgba(15,25,35,.5); z-index: 200;
+  align-items: flex-end; justify-content: center;
+}
+.modal-bg.open { display: flex; }
+.modal-sheet {
+  background: var(--white); width: 100%; max-width: 480px;
+  border-radius: 20px 20px 0 0; padding: 8px 20px 32px;
+}
+.modal-handle {
+  width: 36px; height: 4px; border-radius: 2px;
+  background: var(--border); margin: 12px auto 20px;
+}
+.modal-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.modal-desc  { font-size: 13px; color: var(--ink-3); margin-bottom: 20px; }
+.modal-acts  { display: flex; flex-direction: column; gap: 8px; }
+.m-btn {
+  padding: 14px 16px; border-radius: var(--r);
+  border: none; font-family: inherit; font-size: 14px;
+  font-weight: 600; cursor: pointer; text-align: left;
+  display: flex; align-items: center; gap: 10px;
+}
+.m-btn.blue   { background: var(--accent-2); color: var(--accent); }
+.m-btn.green  { background: var(--present-bg); color: var(--present); }
+.m-btn.cancel { background: var(--paper); color: var(--ink-3); }
+
+/* ══════════════════════════════
+   TOAST
+══════════════════════════════ */
+.toast {
+  position: fixed; bottom: 90px; left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--ink); color: #fff;
+  padding: 10px 20px; border-radius: 20px;
+  font-size: 13px; font-weight: 500; z-index: 300;
+  opacity: 0; transition: all .25s; pointer-events: none; white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.empty-state {
+  text-align: center; padding: 48px 20px;
+  color: var(--ink-3); font-size: 14px;
+}
+.empty-state .ei { font-size: 36px; margin-bottom: 10px; }
+
+@media (min-width: 480px) {
+  .screen, .bottom-dock, .modal-bg { max-width: 480px; }
+  body { display: flex; justify-content: center; }
+  .screen { width: 480px; }
+  .bottom-dock { left: 50%; transform: translateX(-50%); }
+}
 </style>
 </head>
 <body>
 
-<!-- ═══ SCREEN 1: TEACHER SELECT ═══ -->
-<div id="screen-teachers" class="screen active">
-  <div class="hero">
-    <div class="icon">📋</div>
-    <h2>เช็คชื่อนิสิต</h2>
-    <p>วิชา 282221 · หลักการจัดการพลังงานและสิ่งแวดล้อม</p>
+<!-- ════════════════════════════════════════
+     SCREEN 1 · HOME
+════════════════════════════════════════ -->
+<div id="s-home" class="screen active">
+  <div class="home-hero">
+    <div class="course-badge">📚 282221</div>
+    <h1>หลักการจัดการ<br>พลังงานและสิ่งแวดล้อม</h1>
+    <p>ภาคการศึกษา 1/2569 · Sec 1 & 111</p>
   </div>
-  <div class="section-label">เลือกอาจารย์ผู้สอน</div>
-  <div class="teacher-list" id="teacherList">
-    <div class="teacher-card" onclick="selectTeacher(&#39;ดร.ฉัตรแก้ว ชัยลือชา&#39;)">
-      <div class="teacher-avatar">👩‍🏫</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ดร.ฉัตรแก้ว ชัยลือชา</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">42</div>
+      <div class="lbl">นิสิตทั้งหมด</div>
     </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ดร.บุญวัฒน์ วิจารณ์พล&#39;)">
-      <div class="teacher-avatar">👨‍🏫</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ดร.บุญวัฒน์ วิจารณ์พล</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
+    <div class="hero-stat">
+      <div class="num">14</div>
+      <div class="lbl">อาจารย์ผู้สอน</div>
     </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ดร.ปรเมษฐ์ สิทธิสันติ์&#39;)">
-      <div class="teacher-avatar">👨‍🔬</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ดร.ปรเมษฐ์ สิทธิสันติ์</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ดร.สุมล นิลรัตน์นิศากร&#39;)">
-      <div class="teacher-avatar">👩‍🔬</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ดร.สุมล นิลรัตน์นิศากร</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ดร.สุรัตน์ เศษโพธิ์&#39;)">
-      <div class="teacher-avatar">👨‍💼</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ดร.สุรัตน์ เศษโพธิ์</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;อ.พิมพ์ศิริ สุวรรณพัฒน์&#39;)">
-      <div class="teacher-avatar">👩‍💼</div>
-      <div class="teacher-info">
-        <div class="teacher-name">อ.พิมพ์ศิริ สุวรรณพัฒน์</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ผศ.ดร.กฤตชญา อิสกุล&#39;)">
-      <div class="teacher-avatar">🎓</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ผศ.ดร.กฤตชญา อิสกุล</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ผศ.ดร.นพรัตน์ สุริยะไชย&#39;)">
-      <div class="teacher-avatar">🎓</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ผศ.ดร.นพรัตน์ สุริยะไชย</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ผศ.ดร.บุหรัน พันธุ์สวรรค์&#39;)">
-      <div class="teacher-avatar">🎓</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ผศ.ดร.บุหรัน พันธุ์สวรรค์</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ผศ.ดร.รัฐภูมิ พรหมณะ&#39;)">
-      <div class="teacher-avatar">🎓</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ผศ.ดร.รัฐภูมิ พรหมณะ</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ผศ.ดร.วัชระ วงค์ปัญโญ&#39;)">
-      <div class="teacher-avatar">🎓</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ผศ.ดร.วัชระ วงค์ปัญโญ</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;ผศ.ดร.สุชัญญา ทองเครือ&#39;)">
-      <div class="teacher-avatar">🎓</div>
-      <div class="teacher-info">
-        <div class="teacher-name">ผศ.ดร.สุชัญญา ทองเครือ</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;รศ.ดร.ธีรชัย อำนวยล้อเจริญ&#39;)">
-      <div class="teacher-avatar">🏆</div>
-      <div class="teacher-info">
-        <div class="teacher-name">รศ.ดร.ธีรชัย อำนวยล้อเจริญ</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>
-    <div class="teacher-card" onclick="selectTeacher(&#39;อ.สิทธิชัย มุ่งดี&#39;)">
-      <div class="teacher-avatar">👨‍🏫</div>
-      <div class="teacher-info">
-        <div class="teacher-name">อ.สิทธิชัย มุ่งดี</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 &amp; 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div></div>
+  </div>
+
+  <div style="padding:8px 12px 6px; display:flex; gap:8px;">
+    <button onclick="goReport()" style="flex:1;padding:11px;background:var(--ink);color:#fff;border:none;border-radius:var(--r);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;">
+      📊 สรุปรายนิสิต
+    </button>
+  </div>
+
+  <div class="section-head">
+    <h2>เลือกอาจารย์ผู้สอน</h2>
+  </div>
+  <div class="teacher-grid" id="teacherGrid"></div>
 </div>
 
-<!-- ═══ SCREEN 2: SESSION SELECT ═══ -->
-<div id="screen-session" class="screen">
-  <div class="app-header">
-    <button class="back-btn" onclick="goTo(&#39;screen-teachers&#39;)">← กลับ</button>
-    <h1 id="sess-teacher-name">อาจารย์</h1>
-    <p>เลือกครั้งที่เช็คชื่อ</p>
+<!-- ════════════════════════════════════════
+     SCREEN 2 · SESSION SELECT
+════════════════════════════════════════ -->
+<div id="s-session" class="screen">
+  <div class="nav">
+    <button class="nav-back" onclick="go('s-home')">←</button>
+    <div style="flex:1">
+      <div class="nav-title" id="sess-name">อาจารย์</div>
+      <div class="nav-sub">เลือกครั้งที่เช็คชื่อ</div>
+    </div>
   </div>
   <div class="session-body">
-    <div class="session-cards">
-      <div class="session-card" onclick="selectSession(1)">
-        <div class="s-num">1</div>
-        <div class="s-label">ครั้งที่ 1</div>
+    <div class="sess-cards">
+      <div class="sess-card" id="sc1" onclick="pickSess(1)">
+        <div class="n">1</div>
+        <div class="l">ครั้งที่ 1</div>
       </div>
-      <div class="session-card" onclick="selectSession(2)">
-        <div class="s-num">2</div>
-        <div class="s-label">ครั้งที่ 2</div>
+      <div class="sess-card" id="sc2" onclick="pickSess(2)">
+        <div class="n">2</div>
+        <div class="l">ครั้งที่ 2</div>
       </div>
     </div>
-    <div class="date-row">
-      <label>📅 วันที่สอน</label>
-      <input type="date" class="date-input" id="teachDate">
+    <div class="field-group">
+      <label class="field-label">📅 วันที่สอน</label>
+      <input type="date" class="field-input" id="sessDate">
     </div>
-    <div style="margin-top:14px; padding:14px; background:#eff6ff; border-radius:12px; font-size:13px; color:#1e40af;">
-      💡 ข้อมูลการเช็คชื่อจะถูกบันทึกไว้ในเครื่อง สามารถส่งออกได้ในขั้นตอนสุดท้าย
+    <div class="info-box">
+      💾 ข้อมูลบันทึกไว้ในเครื่องนี้ — ส่งออก CSV เพื่อรวบรวมกับอาจารย์ท่านอื่น
     </div>
+    <button class="btn-primary" id="sessGo" onclick="startAtt()" disabled>เริ่มเช็คชื่อ →</button>
   </div>
 </div>
 
-<!-- ═══ SCREEN 3: ATTENDANCE ═══ -->
-<div id="screen-attendance" class="screen">
-  <div class="app-header">
-    <button class="back-btn" onclick="goTo(&#39;screen-session&#39;)">← กลับ</button>
-    <h1 id="att-title">เช็คชื่อ</h1>
-    <p id="att-subtitle">ครั้งที่ 1</p>
+<!-- ════════════════════════════════════════
+     SCREEN 3 · ATTENDANCE
+════════════════════════════════════════ -->
+<div id="s-att" class="screen">
+  <div class="nav">
+    <button class="nav-back" onclick="go('s-session')">←</button>
+    <div style="flex:1">
+      <div class="nav-title" id="att-title">เช็คชื่อ</div>
+      <div class="nav-sub" id="att-sub">ครั้งที่ 1</div>
+    </div>
+    <button class="nav-action ghost" onclick="markFiltered('present')">✅ มาทั้งหมด</button>
   </div>
-  <div class="att-stats">
-    <div class="stat-item"><div class="stat-num" id="cnt-present">0</div><div class="stat-label">✅ มา</div></div>
-    <div class="stat-item"><div class="stat-num" id="cnt-absent">0</div><div class="stat-label">❌ ขาด</div></div>
-    <div class="stat-item"><div class="stat-num" id="cnt-late">0</div><div class="stat-label">⏰ มาสาย</div></div>
-    <div class="stat-item"><div class="stat-num" id="cnt-none">42</div><div class="stat-label">⬜ ยังไม่เช็ค</div></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+  <div class="att-scoreboard">
+    <div class="score-box p"><div class="score-num" id="cp">0</div><div class="score-lbl">มา</div></div>
+    <div class="score-box a"><div class="score-num" id="ca">0</div><div class="score-lbl">ขาด</div></div>
+    <div class="score-box l"><div class="score-num" id="cl">0</div><div class="score-lbl">มาสาย</div></div>
+    <div class="score-box n"><div class="score-num" id="cn">42</div><div class="score-lbl">ยังไม่เช็ค</div></div>
   </div>
-  <div class="filter-bar">
-    <button class="filter-btn on" onclick="setFilter(&#39;all&#39;,this)">ทั้งหมด</button>
-    <button class="filter-btn" onclick="setFilter(&#39;none&#39;,this)">ยังไม่เช็ค</button>
-    <button class="filter-btn" onclick="setFilter(&#39;present&#39;,this)">มา</button>
-    <button class="filter-btn" onclick="setFilter(&#39;absent&#39;,this)">ขาด</button>
-    <button class="filter-btn" onclick="setFilter(&#39;late&#39;,this)">มาสาย</button>
-    <button class="filter-btn" onclick="setFilter(&#39;sec1&#39;,this)">Sec 1</button>
-    <button class="filter-btn" onclick="setFilter(&#39;sec111&#39;,this)">Sec 111</button>
+  <div class="chip-row" id="chipRow">
+    <button class="chip on" onclick="setChip('all',this)">ทั้งหมด</button>
+    <button class="chip" onclick="setChip('none',this)">ยังไม่เช็ค</button>
+    <button class="chip" onclick="setChip('present',this)">มา</button>
+    <button class="chip" onclick="setChip('absent',this)">ขาด</button>
+    <button class="chip" onclick="setChip('late',this)">มาสาย</button>
+    <button class="chip" onclick="setChip('sec1',this)">Sec 1</button>
+    <button class="chip" onclick="setChip('sec111',this)">Sec 111</button>
   </div>
-  <div class="search-bar">
-    <input type="search" class="search-input" id="searchInput" placeholder="🔍 ค้นหาชื่อหรือรหัสนิสิต..." oninput="renderStudents()">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="search" class="search-field" id="q" placeholder="ค้นหาชื่อหรือรหัสนิสิต…" oninput="renderAtt()">
   </div>
-  <div class="student-list" id="studentList"></div>
-  <div class="bottom-bar">
-    <button class="btn-secondary" onclick="markAll(&#39;present&#39;)">✅ มาทั้งหมด</button>
-    <button class="btn-primary" onclick="goToSummary()">ดูสรุป →</button>
+  <div class="s-list" id="attList"></div>
+  <div class="bottom-dock">
+    <button class="dock-ghost" onclick="showExport()">📤 ส่งออก</button>
+    <button class="dock-main" onclick="go('s-sum');renderSum()">ดูสรุปครั้งนี้ →</button>
   </div>
 </div>
 
-<!-- ═══ SCREEN 4: SUMMARY ═══ -->
-<div id="screen-summary" class="screen">
-  <div class="app-header">
-    <button class="back-btn" onclick="goTo(&#39;screen-attendance&#39;)">← แก้ไข</button>
-    <h1>สรุปผลการเช็คชื่อ</h1>
-    <p id="sum-subtitle">ครั้งที่ 1</p>
+<!-- ════════════════════════════════════════
+     SCREEN 4 · SESSION SUMMARY
+════════════════════════════════════════ -->
+<div id="s-sum" class="screen">
+  <div class="nav">
+    <button class="nav-back" onclick="go('s-att')">←</button>
+    <div style="flex:1">
+      <div class="nav-title">สรุปผล</div>
+      <div class="nav-sub" id="sum-sub">ครั้งที่ 1</div>
+    </div>
+    <button class="nav-action" onclick="showExport()">📤</button>
   </div>
-  <div class="summary-hero">
-    <div class="big-icon">✅</div>
-    <h2 id="sum-title">สรุปเสร็จสิ้น</h2>
-    <p id="sum-desc">ภาคการศึกษา 1/2569</p>
-  </div>
-  <div class="summary-cards">
-    <div class="sum-card present"><div class="sum-num" id="s-present">0</div><div class="sum-label">มาเรียน</div></div>
-    <div class="sum-card absent"><div class="sum-num" id="s-absent">0</div><div class="sum-label">ขาดเรียน</div></div>
-    <div class="sum-card late"><div class="sum-num" id="s-late">0</div><div class="sum-label">มาสาย</div></div>
+  <div class="sum-hero">
+    <div class="sum-kpi pk"><div class="kn" id="sk-p">0</div><div class="kl">มาเรียน</div></div>
+    <div class="sum-kpi ak"><div class="kn" id="sk-a">0</div><div class="kl">ขาดเรียน</div></div>
+    <div class="sum-kpi lk"><div class="kn" id="sk-l">0</div><div class="kl">มาสาย</div></div>
   </div>
   <div class="sum-list" id="sumList"></div>
-  <div class="bottom-bar">
-    <button class="btn-secondary" onclick="showExportModal()">📤 ส่งออก</button>
-    <button class="btn-primary" onclick="goTo(&#39;screen-session&#39;)">เช็คครั้งใหม่</button>
+  <div class="bottom-dock">
+    <button class="dock-ghost" onclick="go('s-att')">← แก้ไข</button>
+    <button class="dock-main" onclick="go('s-session')">เช็คครั้งใหม่</button>
   </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCREEN 5 · MASTER REPORT
+════════════════════════════════════════ -->
+<div id="s-report" class="screen">
+  <div class="nav">
+    <button class="nav-back" onclick="go('s-home')">←</button>
+    <div style="flex:1">
+      <div class="nav-title">สรุปรายนิสิต</div>
+      <div class="nav-sub">ทุกอาจารย์ · ทุกครั้ง</div>
+    </div>
+    <button class="nav-action" onclick="showExportReport()">📤</button>
+  </div>
+  <div class="report-hero">
+    <h2>ภาพรวมการเข้าเรียน</h2>
+    <p id="report-desc">รวมจากทุกครั้งที่เช็คชื่อ</p>
+  </div>
+  <div class="report-grid" id="reportGrid"></div>
 </div>
 
 <!-- EXPORT MODAL -->
-<div class="modal-overlay" id="exportModal" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <h3>📤 ส่งออกข้อมูล</h3>
-    <p style="font-size:13px;color:var(--muted);">เลือกรูปแบบการส่งออก</p>
-    <div class="modal-btns">
-      <button class="modal-btn copy" onclick="copyResult()">📋 คัดลอกข้อความ (สำหรับ Line/Email)</button>
-      <button class="modal-btn csv" onclick="downloadCSV()">📊 ดาวน์โหลด CSV</button>
-      <button class="modal-btn cancel" onclick="closeModal()">ยกเลิก</button>
+<div class="modal-bg" id="exportModal" onclick="if(event.target===this)closeModal('exportModal')">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">ส่งออกข้อมูล</div>
+    <div class="modal-desc" id="exp-desc">เลือกรูปแบบที่ต้องการ</div>
+    <div class="modal-acts">
+      <button class="m-btn blue" onclick="copyText()">📋 คัดลอกข้อความ (Line / Email)</button>
+      <button class="m-btn green" onclick="dlCSV()">📊 ดาวน์โหลด CSV</button>
+      <button class="m-btn cancel" onclick="closeModal('exportModal')">ยกเลิก</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXPORT REPORT MODAL -->
+<div class="modal-bg" id="exportReportModal" onclick="if(event.target===this)closeModal('exportReportModal')">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">ส่งออกสรุปรายนิสิต</div>
+    <div class="modal-desc">ข้อมูลทุกครั้ง รวมทุกอาจารย์</div>
+    <div class="modal-acts">
+      <button class="m-btn blue" onclick="copyReport()">📋 คัดลอกข้อความ</button>
+      <button class="m-btn green" onclick="dlReportCSV()">📊 ดาวน์โหลด CSV</button>
+      <button class="m-btn cancel" onclick="closeModal('exportReportModal')">ยกเลิก</button>
     </div>
   </div>
 </div>
@@ -517,208 +656,425 @@
 <div class="toast" id="toast"></div>
 
 <script>
+/* ══════════════════════════════
+   DATA
+══════════════════════════════ */
 const TEACHERS = [
-  "ดร.ฉัตรแก้ว ชัยลือชา","ดร.บุญวัฒน์ วิจารณ์พล","ดร.ปรเมษฐ์ สิทธิสันติ์",
-  "ดร.สุมล นิลรัตน์นิศากร","ดร.สุรัตน์ เศษโพธิ์","อ.พิมพ์ศิริ สุวรรณพัฒน์",
-  "ผศ.ดร.กฤตชญา อิสกุล","ผศ.ดร.นพรัตน์ สุริยะไชย","ผศ.ดร.บุหรัน พันธุ์สวรรค์",
-  "ผศ.ดร.รัฐภูมิ พรหมณะ","ผศ.ดร.วัชระ วงค์ปัญโญ","ผศ.ดร.สุชัญญา ทองเครือ",
-  "รศ.ดร.ธีรชัย อำนวยล้อเจริญ","อ.สิทธิชัย มุ่งดี"
+  {name:"ดร.ฉัตรแก้ว ชัยลือชา",    icon:"👩‍🏫"},
+  {name:"ดร.บุญวัฒน์ วิจารณ์พล",    icon:"👨‍🏫"},
+  {name:"ดร.ปรเมษฐ์ สิทธิสันติ์",   icon:"👨‍🔬"},
+  {name:"ดร.สุมล นิลรัตน์นิศากร",   icon:"👩‍🔬"},
+  {name:"ดร.สุรัตน์ เศษโพธิ์",      icon:"👨‍💼"},
+  {name:"อ.พิมพ์ศิริ สุวรรณพัฒน์",  icon:"👩‍💼"},
+  {name:"ผศ.ดร.กฤตชญา อิสกุล",     icon:"🎓"},
+  {name:"ผศ.ดร.นพรัตน์ สุริยะไชย",  icon:"🎓"},
+  {name:"ผศ.ดร.บุหรัน พันธุ์สวรรค์", icon:"🎓"},
+  {name:"ผศ.ดร.รัฐภูมิ พรหมณะ",    icon:"🎓"},
+  {name:"ผศ.ดร.วัชระ วงค์ปัญโญ",   icon:"🎓"},
+  {name:"ผศ.ดร.สุชัญญา ทองเครือ",   icon:"🎓"},
+  {name:"รศ.ดร.ธีรชัย อำนวยล้อเจริญ",icon:"🏆"},
+  {name:"อ.สิทธิชัย มุ่งดี",         icon:"👨‍🏫"}
 ];
 
-const TEACHER_ICONS = ["👩‍🏫","👨‍🏫","👨‍🔬","👩‍🔬","👨‍💼","👩‍💼","🎓","🎓","🎓","🎓","🎓","🎓","🏆","👨‍🏫"];
+const STUDENTS = [
+  {id:"65140152",name:"นายอมรเทพ บุตรเหลี่ยม",sec:"1"},
+  {id:"68140010",name:"นางสาวกนกพร ชาวนาแก้ว",sec:"1"},
+  {id:"68140021",name:"นายกฤษฎา ยงเพชร",sec:"1"},
+  {id:"68140043",name:"นายคณาธิป ภูวโรจน์ชัยกุล",sec:"1"},
+  {id:"68140054",name:"นางสาวจรัสรัศมิ์ อินทรทัศน์",sec:"1"},
+  {id:"68140065",name:"นายจักรินทร์ วิเชียรรัมย์",sec:"1"},
+  {id:"68140076",name:"นางสาวชญานี สร้อยทอง",sec:"1"},
+  {id:"68140087",name:"นางสาวชลธิชา เเสนเทิง",sec:"1"},
+  {id:"68140100",name:"นางสาวณัชรินทร์ ทองวัน",sec:"1"},
+  {id:"68140111",name:"นายดรัณภพ พรมสุนหา",sec:"1"},
+  {id:"68140122",name:"นางสาวนฤมล เริงสุข",sec:"1"},
+  {id:"68140133",name:"นายปฐมชัย ขุนอินทร์",sec:"1"},
+  {id:"68140144",name:"นางสาวพิมพ์มาดา วิฐาน",sec:"1"},
+  {id:"68140177",name:"นายรัตภูมิ พยายาม",sec:"1"},
+  {id:"68140188",name:"นางสาววรัดชภรณ์ ป้อมป้อง",sec:"1"},
+  {id:"68140212",name:"นายศุภชัย ตรุษจา",sec:"1"},
+  {id:"68140223",name:"นางสาวศุภัชยา บริรักษ์",sec:"1"},
+  {id:"68140234",name:"นายสิทธิกานต์ แซ่จาง",sec:"1"},
+  {id:"68140256",name:"นางสาวหทัยพันธน์ แพร่อ้อย",sec:"1"},
+  {id:"68140267",name:"นางสาวหยาดทิพย์ นุฝิ่น",sec:"1"},
+  {id:"68140278",name:"นางสาวอรพรรณ ลายคำ",sec:"1"},
+  {id:"68140290",name:"นางสาวอุษณิภา จะมัง",sec:"1"},
+  {id:"68140728",name:"นางสาววรพิชชา ปิ่นแก้ว",sec:"1"},
+  {id:"68140953",name:"นางสาวกนกพร ช่างสอ",sec:"1"},
+  {id:"68140964",name:"นายกวินท์ นันตาเสน",sec:"1"},
+  {id:"68140975",name:"นางสาวกุสุมา ไชยสีดา",sec:"1"},
+  {id:"68140997",name:"นางสาวจุฑาทิพย์ บุญมา",sec:"1"},
+  {id:"68141044",name:"นางสาวปฐมพร สถาพรอมรวุฒิ",sec:"1"},
+  {id:"68141055",name:"นางสาวพิมพ์ชนก ทิพย์โกมล",sec:"1"},
+  {id:"68141077",name:"นางสาวเพชรไพริน คงพรม",sec:"1"},
+  {id:"68141088",name:"นางสาวเพ็ญพิชญา วงษ์สิทธิ์",sec:"1"},
+  {id:"68141099",name:"นางสาวแพรนภัทร เเจ่มเจริญ",sec:"1"},
+  {id:"68141101",name:"นางสาวภัทรนันท์ พันธุ์ไม้",sec:"1"},
+  {id:"68141145",name:"นายอนุภัทร โอสถ",sec:"1"},
+  {id:"68141594",name:"นางสาวฐิตารีย์ ตื้อหล้า",sec:"1"},
+  {id:"68141628",name:"นางสาวอัญญิกา สุขใหญ่",sec:"1"},
+  {id:"68141954",name:"นางสาวเมธาวดี เจริญทรัพย์",sec:"1"},
+  {id:"68141965",name:"นางสาวอรญา สมสุรินทร์",sec:"1"},
+  {id:"68141976",name:"นางสาวอริสา คงเพชรศักดิ์",sec:"1"},
+  {id:"68140885",name:"นายศุภวิชญ์ หอมนาน",sec:"111"},
+  {id:"68141550",name:"นายจักริน นนท์เต็ม",sec:"111"},
+  {id:"68141583",name:"นายปรินทร ฝายศักดิ์",sec:"111"}
+];
 
-const STUDENTS = [{"id":"65140152","name":"นายอมรเทพ บุตรเหลี่ยม","sec":"1"},{"id":"68140010","name":"นางสาวกนกพร ชาวนาแก้ว","sec":"1"},{"id":"68140021","name":"นายกฤษฎา ยงเพชร","sec":"1"},{"id":"68140043","name":"นายคณาธิป ภูวโรจน์ชัยกุล","sec":"1"},{"id":"68140054","name":"นางสาวจรัสรัศมิ์ อินทรทัศน์","sec":"1"},{"id":"68140065","name":"นายจักรินทร์ วิเชียรรัมย์","sec":"1"},{"id":"68140076","name":"นางสาวชญานี สร้อยทอง","sec":"1"},{"id":"68140087","name":"นางสาวชลธิชา เเสนเทิง","sec":"1"},{"id":"68140100","name":"นางสาวณัชรินทร์ ทองวัน","sec":"1"},{"id":"68140111","name":"นายดรัณภพ พรมสุนหา","sec":"1"},{"id":"68140122","name":"นางสาวนฤมล เริงสุข","sec":"1"},{"id":"68140133","name":"นายปฐมชัย ขุนอินทร์","sec":"1"},{"id":"68140144","name":"นางสาวพิมพ์มาดา วิฐาน","sec":"1"},{"id":"68140177","name":"นายรัตภูมิ พยายาม","sec":"1"},{"id":"68140188","name":"นางสาววรัดชภรณ์ ป้อมป้อง","sec":"1"},{"id":"68140212","name":"นายศุภชัย ตรุษจา","sec":"1"},{"id":"68140223","name":"นางสาวศุภัชยา บริรักษ์","sec":"1"},{"id":"68140234","name":"นายสิทธิกานต์ แซ่จาง","sec":"1"},{"id":"68140256","name":"นางสาวหทัยพันธน์ แพร่อ้อย","sec":"1"},{"id":"68140267","name":"นางสาวหยาดทิพย์ นุฝิ่น","sec":"1"},{"id":"68140278","name":"นางสาวอรพรรณ ลายคำ","sec":"1"},{"id":"68140290","name":"นางสาวอุษณิภา จะมัง","sec":"1"},{"id":"68140728","name":"นางสาววรพิชชา ปิ่นแก้ว","sec":"1"},{"id":"68140953","name":"นางสาวกนกพร ช่างสอ","sec":"1"},{"id":"68140964","name":"นายกวินท์ นันตาเสน","sec":"1"},{"id":"68140975","name":"นางสาวกุสุมา ไชยสีดา","sec":"1"},{"id":"68140997","name":"นางสาวจุฑาทิพย์ บุญมา","sec":"1"},{"id":"68141044","name":"นางสาวปฐมพร สถาพรอมรวุฒิ","sec":"1"},{"id":"68141055","name":"นางสาวพิมพ์ชนก ทิพย์โกมล","sec":"1"},{"id":"68141077","name":"นางสาวเพชรไพริน คงพรม","sec":"1"},{"id":"68141088","name":"นางสาวเพ็ญพิชญา วงษ์สิทธิ์","sec":"1"},{"id":"68141099","name":"นางสาวแพรนภัทร เเจ่มเจริญ","sec":"1"},{"id":"68141101","name":"นางสาวภัทรนันท์ พันธุ์ไม้","sec":"1"},{"id":"68141145","name":"นายอนุภัทร โอสถ","sec":"1"},{"id":"68141594","name":"นางสาวฐิตารีย์ ตื้อหล้า","sec":"1"},{"id":"68141628","name":"นางสาวอัญญิกา สุขใหญ่","sec":"1"},{"id":"68141954","name":"นางสาวเมธาวดี เจริญทรัพย์","sec":"1"},{"id":"68141965","name":"นางสาวอรญา สมสุรินทร์","sec":"1"},{"id":"68141976","name":"นางสาวอริสา คงเพชรศักดิ์","sec":"1"},{"id":"68140885","name":"นายศุภวิชญ์ หอมนาน","sec":"111"},{"id":"68141550","name":"นายจักริน นนท์เต็ม","sec":"111"},{"id":"68141583","name":"นายปรินทร ฝายศักดิ์","sec":"111"}];
+/* ══════════════════════════════
+   STATE
+   att[teacherName][session][studentId] = 'present'|'absent'|'late'
+══════════════════════════════ */
+let att = JSON.parse(localStorage.getItem('att282221') || '{}');
+const saveAtt = () => localStorage.setItem('att282221', JSON.stringify(att));
 
-// state
-let curTeacher = '', curSession = 1, curDate = '', curFilter = 'all';
-// attendance[teacher][session][studentId] = 'present'|'absent'|'late'|''
-const att = {};
+let curT = '', curSess = 1, curDate = '', curFilter = 'all';
 
-function getAtt(t, s, id) { return (att[t]?.[s]?.[id]) || ''; }
-function setAtt(t, s, id, val) {
-  if (!att[t]) att[t] = {};
-  if (!att[t][s]) att[t][s] = {};
-  att[t][s][id] = val;
-  updateStats(); renderStudents();
+function getS(t,s,id){ return att[t]?.[s]?.[id] || ''; }
+function setS(t,s,id,v){
+  if(!att[t]) att[t]={};
+  if(!att[t][s]) att[t][s]={};
+  if(att[t][s][id]===v) { att[t][s][id]=''; } else { att[t][s][id]=v; }
+  saveAtt(); updateStats(); renderAtt();
 }
 
-// ── TEACHER LIST ──
-function buildTeachers() {
-  const el = document.getElementById('teacherList');
-  el.innerHTML = TEACHERS.map((t,i) => `
-    <div class="teacher-card" onclick="selectTeacher('${t}')">
-      <div class="teacher-avatar">${TEACHER_ICONS[i]}</div>
-      <div class="teacher-info">
-        <div class="teacher-name">${t}</div>
-        <div class="teacher-sub">วิชา 282221 · Sec 1 & 111</div>
-      </div>
-      <div class="teacher-arrow">›</div>
-    </div>`).join('');
-}
-
-function selectTeacher(t) {
-  curTeacher = t;
-  document.getElementById('sess-teacher-name').textContent = t;
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('teachDate').value = today;
-  goTo('screen-session');
-}
-
-function selectSession(n) {
-  curSession = n;
-  curDate = document.getElementById('teachDate').value;
-  const dateStr = curDate ? new Date(curDate).toLocaleDateString('th-TH', {day:'numeric',month:'long',year:'numeric'}) : '';
-  document.getElementById('att-title').textContent = curTeacher;
-  document.getElementById('att-subtitle').textContent = `ครั้งที่ ${n}${dateStr?' · '+dateStr:''}`;
-  document.getElementById('searchInput').value = '';
-  curFilter = 'all';
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
-  document.querySelector('.filter-btn').classList.add('on');
-  updateStats(); renderStudents();
-  goTo('screen-attendance');
-}
-
-// ── FILTER & SEARCH ──
-function setFilter(f, btn) {
-  curFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  renderStudents();
-}
-
-function filtered() {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  return STUDENTS.filter(s => {
-    const status = getAtt(curTeacher, curSession, s.id);
-    if (curFilter === 'present' && status !== 'present') return false;
-    if (curFilter === 'absent'  && status !== 'absent')  return false;
-    if (curFilter === 'late'    && status !== 'late')    return false;
-    if (curFilter === 'none'    && status !== '')         return false;
-    if (curFilter === 'sec1'    && s.sec !== '1')        return false;
-    if (curFilter === 'sec111'  && s.sec !== '111')      return false;
-    if (q && !s.name.toLowerCase().includes(q) && !s.id.includes(q)) return false;
-    return true;
-  });
-}
-
-function renderStudents() {
-  const list = document.getElementById('studentList');
-  const rows = filtered();
-  if (!rows.length) { list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted);">ไม่พบรายชื่อ</div>'; return; }
-  list.innerHTML = rows.map((s, idx) => {
-    const st = getAtt(curTeacher, curSession, s.id);
-    return `<div class="student-row${s.sec==='111'?' sec111':''}">
-      <div class="student-num">${idx+1}</div>
-      <div class="student-info">
-        <div class="student-name">${s.name}<span class="sec-badge">${s.sec}</span></div>
-        <div class="student-id">${s.id}</div>
-      </div>
-      <div class="att-btns">
-        <button class="att-btn${st==='present'?' present':''}" onclick="setAtt('${curTeacher}',${curSession},'${s.id}','${st==='present'?'':'present'}')">✓</button>
-        <button class="att-btn${st==='late'?' late':''}"    onclick="setAtt('${curTeacher}',${curSession},'${s.id}','${st==='late'?'':'late'}')">⏰</button>
-        <button class="att-btn${st==='absent'?' absent':''}" onclick="setAtt('${curTeacher}',${curSession},'${s.id}','${st==='absent'?'':'absent'}')">✗</button>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function updateStats() {
-  const counts = {present:0, absent:0, late:0, none:0};
-  STUDENTS.forEach(s => {
-    const st = getAtt(curTeacher, curSession, s.id);
-    counts[st||'none']++;
-  });
-  document.getElementById('cnt-present').textContent = counts.present;
-  document.getElementById('cnt-absent').textContent  = counts.absent;
-  document.getElementById('cnt-late').textContent    = counts.late;
-  document.getElementById('cnt-none').textContent    = counts.none;
-}
-
-function markAll(status) {
-  filtered().forEach(s => {
-    if (!att[curTeacher]) att[curTeacher] = {};
-    if (!att[curTeacher][curSession]) att[curTeacher][curSession] = {};
-    att[curTeacher][curSession][s.id] = status;
-  });
-  updateStats(); renderStudents();
-  toast('✅ เช็คมาทั้งหมดแล้ว');
-}
-
-// ── SUMMARY ──
-function goToSummary() {
-  const counts = {present:0, absent:0, late:0};
-  STUDENTS.forEach(s => {
-    const st = getAtt(curTeacher, curSession, s.id);
-    if (counts[st] !== undefined) counts[st]++;
-  });
-  document.getElementById('s-present').textContent = counts.present;
-  document.getElementById('s-absent').textContent  = counts.absent;
-  document.getElementById('s-late').textContent    = counts.late;
-
-  const dateStr = curDate ? new Date(curDate).toLocaleDateString('th-TH',{day:'numeric',month:'long',year:'numeric'}) : '';
-  document.getElementById('sum-subtitle').textContent = `ครั้งที่ ${curSession}${dateStr?' · '+dateStr:''}`;
-  document.getElementById('sum-title').textContent = curTeacher;
-  document.getElementById('sum-desc').textContent = `มาเรียน ${counts.present} คน จาก ${STUDENTS.length} คน`;
-
-  const STATUS_LABEL = {present:'✓', absent:'✗', late:'⏰', '':'?'};
-  document.getElementById('sumList').innerHTML = STUDENTS.map(s => {
-    const st = getAtt(curTeacher, curSession, s.id) || '';
-    return `<div class="sum-item${s.sec==='111'?' sec111':''}">
-      <div class="status-dot ${st||'none'}">${STATUS_LABEL[st]}</div>
-      <div style="flex:1;min-width:0;">
-        <div class="sum-name">${s.name} <span class="sec-badge">${s.sec}</span></div>
-        <div class="sum-id">${s.id}</div>
-      </div>
-    </div>`;
-  }).join('');
-  goTo('screen-summary');
-}
-
-// ── EXPORT ──
-function showExportModal() { document.getElementById('exportModal').classList.add('open'); }
-function closeModal()      { document.getElementById('exportModal').classList.remove('open'); }
-
-function copyResult() {
-  const dateStr = curDate ? new Date(curDate).toLocaleDateString('th-TH',{day:'numeric',month:'long',year:'numeric'}) : 'ไม่ระบุ';
-  const ST = {present:'มา', absent:'ขาด', late:'มาสาย', '':'ไม่ระบุ'};
-  let txt = `📋 ผลเช็คชื่อ วิชา 282221\nอาจารย์: ${curTeacher}\nครั้งที่ ${curSession} วันที่ ${dateStr}\n${'─'.repeat(30)}\n`;
-  txt += STUDENTS.map((s,i) => `${i+1}. ${s.name} (${s.id}) → ${ST[getAtt(curTeacher,curSession,s.id)||'']}`).join('\n');
-  const counts = {present:0,absent:0,late:0};
-  STUDENTS.forEach(s => { const st = getAtt(curTeacher,curSession,s.id); if(counts[st]!==undefined) counts[st]++; });
-  txt += `\n${'─'.repeat(30)}\n✅ มา: ${counts.present}  ❌ ขาด: ${counts.absent}  ⏰ สาย: ${counts.late}`;
-  navigator.clipboard.writeText(txt).then(() => { toast('คัดลอกแล้ว!'); closeModal(); });
-}
-
-function downloadCSV() {
-  const dateStr = curDate || new Date().toISOString().split('T')[0];
-  const ST = {present:'มา', absent:'ขาด', late:'มาสาย', '':'ไม่ระบุ'};
-  const rows = [['ลำดับ','รหัสนิสิต','ชื่อ-สกุล','หมู่เรียน','สถานะ']];
-  STUDENTS.forEach((s,i) => {
-    rows.push([i+1, s.id, s.name, s.sec, ST[getAtt(curTeacher,curSession,s.id)||'']]);
-  });
-  const csv = '\uFEFF' + rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'}));
-  a.download = `เช็คชื่อ_282221_ครั้งที่${curSession}_${dateStr}.csv`;
-  a.click(); closeModal(); toast('ดาวน์โหลดแล้ว!');
-}
-
-// ── HELPERS ──
-function goTo(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+/* ══════════════════════════════
+   NAV
+══════════════════════════════ */
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
 }
 
-function toast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
+/* ══════════════════════════════
+   HOME
+══════════════════════════════ */
+function buildHome(){
+  const g = document.getElementById('teacherGrid');
+  g.innerHTML = TEACHERS.map((t,i)=>{
+    const d1 = att[t.name]?.[1] ? Object.values(att[t.name][1]).filter(v=>v).length : 0;
+    const d2 = att[t.name]?.[2] ? Object.values(att[t.name][2]).filter(v=>v).length : 0;
+    return `<div class="t-card" onclick="selectT('${t.name.replace(/'/g,"\\'")}')">
+      <div class="t-avatar">${t.icon}</div>
+      <div class="t-info">
+        <div class="t-name">${t.name}</div>
+        <div class="t-meta">${d1+d2 > 0 ? `เช็คแล้ว ${d1+d2} คน` : 'ยังไม่ได้เช็คชื่อ'}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;">
+        <div class="t-sessions">
+          <div class="t-dot${d1>0?' done':''}"></div>
+          <div class="t-dot${d2>0?' done':''}"></div>
+        </div>
+        <div class="t-arrow">›</div>
+      </div>
+    </div>`;
+  }).join('');
 }
 
-// INIT
-buildTeachers();
+function selectT(name){
+  curT = name;
+  document.getElementById('sess-name').textContent = name;
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('sessDate').value = today;
+  curSess = 0;
+  document.getElementById('sc1').classList.remove('selected');
+  document.getElementById('sc2').classList.remove('selected');
+  document.getElementById('sessGo').disabled = true;
+  // show done badges
+  for(let s=1;s<=2;s++){
+    const done = att[curT]?.[s] && Object.values(att[curT][s]).some(v=>v);
+    const el = document.getElementById(`sc${s}`);
+    const badge = el.querySelector('.done-badge');
+    if(done && !badge){
+      const b = document.createElement('div');
+      b.className='done-badge'; b.textContent='เช็คแล้ว';
+      el.appendChild(b);
+    } else if(!done && badge) badge.remove();
+  }
+  go('s-session');
+}
+
+function pickSess(n){
+  curSess = n;
+  document.getElementById('sc1').classList.toggle('selected', n===1);
+  document.getElementById('sc2').classList.toggle('selected', n===2);
+  document.getElementById('sessGo').disabled = false;
+}
+
+function startAtt(){
+  curDate = document.getElementById('sessDate').value;
+  const dateStr = curDate ? new Date(curDate).toLocaleDateString('th-TH',{day:'numeric',month:'long',year:'numeric'}) : '';
+  document.getElementById('att-title').textContent = curT;
+  document.getElementById('att-sub').textContent = `ครั้งที่ ${curSess}${dateStr?' · '+dateStr:''}`;
+  document.getElementById('q').value = '';
+  curFilter = 'all';
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+  document.querySelector('.chip').classList.add('on');
+  updateStats(); renderAtt();
+  go('s-att');
+}
+
+/* ══════════════════════════════
+   ATTENDANCE
+══════════════════════════════ */
+function updateStats(){
+  let p=0,a=0,l=0,n=0;
+  STUDENTS.forEach(s=>{
+    const v=getS(curT,curSess,s.id);
+    if(v==='present') p++;
+    else if(v==='absent') a++;
+    else if(v==='late') l++;
+    else n++;
+  });
+  document.getElementById('cp').textContent=p;
+  document.getElementById('ca').textContent=a;
+  document.getElementById('cl').textContent=l;
+  document.getElementById('cn').textContent=n;
+  const total = STUDENTS.length;
+  document.getElementById('prog').style.width = ((p+a+l)/total*100)+'%';
+}
+
+function filteredStudents(){
+  const q = document.getElementById('q').value.toLowerCase();
+  return STUDENTS.filter(s=>{
+    const v = getS(curT,curSess,s.id);
+    if(curFilter==='present' && v!=='present') return false;
+    if(curFilter==='absent'  && v!=='absent')  return false;
+    if(curFilter==='late'    && v!=='late')    return false;
+    if(curFilter==='none'    && v!=='')        return false;
+    if(curFilter==='sec1'    && s.sec!=='1')   return false;
+    if(curFilter==='sec111'  && s.sec!=='111') return false;
+    if(q && !s.name.includes(q) && !s.id.includes(q)) return false;
+    return true;
+  });
+}
+
+function renderAtt(){
+  const list = document.getElementById('attList');
+  const rows = filteredStudents();
+  if(!rows.length){
+    list.innerHTML='<div class="empty-state"><div class="ei">🔍</div>ไม่พบรายชื่อที่ค้นหา</div>';
+    return;
+  }
+  list.innerHTML = rows.map((s,i)=>{
+    const v = getS(curT,curSess,s.id);
+    const cls = v ? `marked-${v}`:'' ;
+    return `<div class="s-row${s.sec==='111'?' sec111':''} ${cls}">
+      <div class="s-seq">${i+1}</div>
+      <div class="s-info">
+        <div class="s-name">${s.name}<span class="sec-tag${s.sec==='111'?' s111':''}">${s.sec}</span></div>
+        <div class="s-id">${s.id}</div>
+      </div>
+      <div class="att-trio">
+        <button class="trio-btn${v==='present'?' p':''}" onclick="setS('${curT}',${curSess},'${s.id}','present')" title="มาเรียน">✓</button>
+        <button class="trio-btn${v==='late'?' l':''}"    onclick="setS('${curT}',${curSess},'${s.id}','late')"    title="มาสาย">⏰</button>
+        <button class="trio-btn${v==='absent'?' a':''}"  onclick="setS('${curT}',${curSess},'${s.id}','absent')"  title="ขาดเรียน">✗</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setChip(f,btn){
+  curFilter=f;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+  btn.classList.add('on');
+  renderAtt();
+}
+
+function markFiltered(status){
+  filteredStudents().forEach(s=>{
+    if(!att[curT]) att[curT]={};
+    if(!att[curT][curSess]) att[curT][curSess]={};
+    att[curT][curSess][s.id]=status;
+  });
+  saveAtt(); updateStats(); renderAtt();
+  toast(`✅ เช็ค "${status==='present'?'มา':status==='absent'?'ขาด':'มาสาย'}" ทั้งหมดแล้ว`);
+}
+
+/* ══════════════════════════════
+   SESSION SUMMARY
+══════════════════════════════ */
+function renderSum(){
+  const dateStr = curDate ? new Date(curDate).toLocaleDateString('th-TH',{day:'numeric',month:'long',year:'numeric'}) : '';
+  document.getElementById('sum-sub').textContent = `${curT} · ครั้งที่ ${curSess}${dateStr?' · '+dateStr:''}`;
+  let p=0,a=0,l=0;
+  const ST = {present:'✓',absent:'✗',late:'⏰','':`?`};
+  const CL = {present:'p',absent:'a',late:'l','':`x`};
+  document.getElementById('sumList').innerHTML = STUDENTS.map(s=>{
+    const v=getS(curT,curSess,s.id);
+    if(v==='present')p++; else if(v==='absent')a++; else if(v==='late')l++;
+    return `<div class="sum-row${s.sec==='111'?' sec111':''}">
+      <div class="status-pill ${CL[v]}">${ST[v]}</div>
+      <div style="flex:1;min-width:0">
+        <div class="sum-sname">${s.name}<span class="sec-tag${s.sec==='111'?' s111':''}">${s.sec}</span></div>
+        <div class="sum-sid">${s.id}</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('sk-p').textContent=p;
+  document.getElementById('sk-a').textContent=a;
+  document.getElementById('sk-l').textContent=l;
+}
+
+/* ══════════════════════════════
+   MASTER REPORT
+══════════════════════════════ */
+function goReport(){
+  renderReport(); go('s-report');
+}
+
+function renderReport(){
+  // collect all check-in records across all teachers & sessions
+  const tally = {}; // id -> {p,a,l,total}
+  STUDENTS.forEach(s=>{ tally[s.id]={p:0,a:0,l:0,total:0}; });
+
+  let totalSessions = 0;
+  TEACHERS.forEach(t=>{
+    [1,2].forEach(sess=>{
+      const data = att[t.name]?.[sess];
+      if(!data) return;
+      const hasAny = Object.values(data).some(v=>v);
+      if(!hasAny) return;
+      totalSessions++;
+      STUDENTS.forEach(s=>{
+        const v = data[s.id] || '';
+        if(v==='present'){ tally[s.id].p++; tally[s.id].total++; }
+        else if(v==='absent'){ tally[s.id].a++; tally[s.id].total++; }
+        else if(v==='late'){ tally[s.id].l++; tally[s.id].total++; }
+      });
+    });
+  });
+
+  document.getElementById('report-desc').textContent =
+    `รวม ${totalSessions} ครั้ง จาก ${TEACHERS.length} อาจารย์`;
+
+  if(totalSessions===0){
+    document.getElementById('reportGrid').innerHTML =
+      '<div class="empty-state"><div class="ei">📋</div>ยังไม่มีข้อมูลการเช็คชื่อ<br>กลับไปเลือกอาจารย์และเริ่มเช็คชื่อก่อนนะครับ</div>';
+    return;
+  }
+
+  document.getElementById('reportGrid').innerHTML = STUDENTS.map(s=>{
+    const t = tally[s.id];
+    const icon = s.sec==='111'?'🟣':'🔵';
+    return `<div class="r-row${s.sec==='111'?' sec111':''}">
+      <div class="r-avatar">${icon}</div>
+      <div class="r-info">
+        <div class="r-name">${s.name}<span class="sec-tag${s.sec==='111'?' s111':''}">${s.sec}</span></div>
+        <div class="r-id">${s.id}</div>
+      </div>
+      <div class="r-pills">
+        <div class="rpill p">${t.p}</div>
+        <div class="rpill l">${t.l}</div>
+        <div class="rpill a">${t.a}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ══════════════════════════════
+   EXPORT
+══════════════════════════════ */
+function showExport(){
+  document.getElementById('exp-desc').textContent =
+    `${curT} · ครั้งที่ ${curSess}`;
+  document.getElementById('exportModal').classList.add('open');
+}
+function showExportReport(){ document.getElementById('exportReportModal').classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+function buildText(){
+  const ST={present:'มา',absent:'ขาด',late:'มาสาย','':`ไม่ระบุ`};
+  const dateStr = curDate ? new Date(curDate).toLocaleDateString('th-TH',{day:'numeric',month:'long',year:'numeric'}) : 'ไม่ระบุ';
+  let p=0,a=0,l=0;
+  let rows = STUDENTS.map((s,i)=>{
+    const v=getS(curT,curSess,s.id);
+    if(v==='present')p++; else if(v==='absent')a++; else if(v==='late')l++;
+    return `${i+1}. ${s.name} (${s.id}) → ${ST[v]}`;
+  }).join('\n');
+  return `📋 เช็คชื่อวิชา 282221\nอาจารย์: ${curT}\nครั้งที่ ${curSess} · ${dateStr}\n${'─'.repeat(32)}\n${rows}\n${'─'.repeat(32)}\n✅ มา ${p}  ❌ ขาด ${a}  ⏰ สาย ${l}`;
+}
+
+function copyText(){
+  navigator.clipboard.writeText(buildText()).then(()=>{ toast('คัดลอกแล้ว!'); closeModal('exportModal'); });
+}
+
+function dlCSV(){
+  const ST={present:'มา',absent:'ขาด',late:'มาสาย','':`ไม่ระบุ`};
+  const rows=[['ลำดับ','รหัสนิสิต','ชื่อ-สกุล','หมู่เรียน','สถานะ','อาจารย์','ครั้งที่','วันที่']];
+  STUDENTS.forEach((s,i)=>{
+    rows.push([i+1,s.id,s.name,s.sec,ST[getS(curT,curSess,s.id)],curT,curSess,curDate]);
+  });
+  downloadCSV(rows,`เช็คชื่อ_282221_${curT.substring(0,6)}_ครั้งที่${curSess}_${curDate||'nodate'}.csv`);
+  closeModal('exportModal'); toast('ดาวน์โหลดแล้ว!');
+}
+
+function copyReport(){
+  let txt='📊 สรุปรายนิสิต วิชา 282221\n'+'─'.repeat(32)+'\n';
+  const tally={};
+  STUDENTS.forEach(s=>{tally[s.id]={p:0,a:0,l:0};});
+  TEACHERS.forEach(t=>{
+    [1,2].forEach(sess=>{
+      const d=att[t.name]?.[sess]||{};
+      STUDENTS.forEach(s=>{
+        const v=d[s.id]||'';
+        if(v==='present')tally[s.id].p++;
+        else if(v==='absent')tally[s.id].a++;
+        else if(v==='late')tally[s.id].l++;
+      });
+    });
+  });
+  txt+=STUDENTS.map((s,i)=>{
+    const t=tally[s.id];
+    return `${i+1}. ${s.name} | มา ${t.p} | สาย ${t.l} | ขาด ${t.a}`;
+  }).join('\n');
+  navigator.clipboard.writeText(txt).then(()=>{ toast('คัดลอกแล้ว!'); closeModal('exportReportModal'); });
+}
+
+function dlReportCSV(){
+  const tally={};
+  STUDENTS.forEach(s=>{tally[s.id]={p:0,a:0,l:0};});
+  TEACHERS.forEach(t=>{
+    [1,2].forEach(sess=>{
+      const d=att[t.name]?.[sess]||{};
+      STUDENTS.forEach(s=>{
+        const v=d[s.id]||'';
+        if(v==='present')tally[s.id].p++;
+        else if(v==='absent')tally[s.id].a++;
+        else if(v==='late')tally[s.id].l++;
+      });
+    });
+  });
+  const rows=[['ลำดับ','รหัสนิสิต','ชื่อ-สกุล','หมู่เรียน','มาเรียน','มาสาย','ขาดเรียน','รวมครั้งที่เช็ค']];
+  STUDENTS.forEach((s,i)=>{
+    const t=tally[s.id];
+    rows.push([i+1,s.id,s.name,s.sec,t.p,t.l,t.a,t.p+t.l+t.a]);
+  });
+  downloadCSV(rows,`สรุปนิสิต_282221_${new Date().toISOString().split('T')[0]}.csv`);
+  closeModal('exportReportModal'); toast('ดาวน์โหลดแล้ว!');
+}
+
+function downloadCSV(rows, fname){
+  const csv = '\uFEFF'+rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+  a.download=fname; a.click();
+}
+
+/* ══════════════════════════════
+   TOAST
+══════════════════════════════ */
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+/* ══════════════════════════════
+   INIT
+══════════════════════════════ */
+buildHome();
 </script>
-
-
-</body></html>
+</body>
+</html>
